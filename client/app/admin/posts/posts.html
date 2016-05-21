@@ -1,0 +1,20 @@
+<button class="btn-primary" ui-sref="admin.posts_new">Add new post</button>
+<br><br><br>
+<table datatable="ng" class="row-border hover">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Category</th>
+			<th>User</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="post in posts">
+			<td>{{post.title}}</td>
+			<td>{{post.categories}}</td>
+			<td>{{post.user}}</td>
+			<td><button class="btn-info">Edit</button>&nbsp;&nbsp;<button class="btn-warning">Delete</button></td>
+		</tr>
+	</tbody>
+</table>
