@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # erp
 
 This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 3.6.1.
@@ -29,3 +30,7 @@ Run `grunt build` for building and `grunt serve` for preview.
 ## Testing
 
 Running `npm test` will run the unit tests with karma.
+=======
+# blog
+Personal blog
+>>>>>>> 5a7d23caa7e88e4834be3ff978f028cc94a027ef
