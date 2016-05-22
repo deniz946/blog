@@ -9,6 +9,10 @@ angular.module('erpApp')
       return $http.get(urlBase + '/posts');
     }
 
+    factory.getActivePosts = function () { 
+      return $http.get(urlBase + '/posts/active');
+    }
+
     factory.newPost = function (post) {
       return $http.post(urlBase + '/posts', post); 
     }

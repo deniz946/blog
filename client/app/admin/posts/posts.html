@@ -6,7 +6,9 @@
 			<th>Title</th>
 			<th>Category</th>
 			<th>User</th>
+			<th>Posted</th>
 			<th>Actions</th>
+
 		</tr>
 	</thead>
 	<tbody>
@@ -14,6 +16,7 @@
 			<td>{{post.title}}</td>
 			<td>{{post.categories}}</td>
 			<td>{{post.user}}</td>
+			<td>{{post.posted|date:medium}}</td>
 			<td><button class="btn-info">Edit</button>&nbsp;&nbsp;<button class="btn-warning">Delete</button></td>
 		</tr>
 	</tbody>

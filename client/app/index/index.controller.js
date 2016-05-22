@@ -4,7 +4,7 @@
 class IndexComponent {
   constructor($scope, Posts) {
   	this.Posts = Posts;
-  	this.Posts.getPosts().success(function (posts) {
+  	this.Posts.getActivePosts().success(function (posts) {
 		$scope.posts = posts;
   	})
   }

@@ -1,6 +1,7 @@
 /**
  * Using Rails-like standard naming convention for endpoints.
  * GET     /api/posts              ->  index
+ * GET     /api/posts/active       ->  index of published posts      
  * POST    /api/posts              ->  create
  * GET     /api/posts/:id          ->  show
  * PUT     /api/posts/:id          ->  update
@@ -61,7 +62,14 @@ function handleError(res, statusCode) {
 
 // Gets a list of Posts
 export function index(req, res) {
-  return Post.find().exec()
+  return Post.find().sort({posted: -1}).exec()
+    .then(respondWithResult(res))
+    .catch(handleError(res));
+}
+
+// Gets a list of Posts
+export function indexActive(req, res) {
+  return Post.find({active: true}).sort({posted: -1}).exec()
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
