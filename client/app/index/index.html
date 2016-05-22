@@ -28,7 +28,7 @@
                             <a ui-sref='post({id: post._id})'>{{post.title}}</a>
                         </h2></a>
                         <h3 class="post-subtitle no-negrita">
-                            <p ng-bind-html="post.body"></p>
+                            <p ng-bind-html ='(post.body | limitTo: 50)'></p>
                         </h3>
                     
                     <p class="post-meta">Posted by <a href="#">{{post.user}}</a> on {{post.posted | date:medium}}</p>

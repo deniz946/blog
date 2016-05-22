@@ -1,27 +1,72 @@
 <!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/post-bg.jpg')">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="post-heading">
-                        <h1>{{post.title}}</h1>
-                        <span class="meta">Posted by <a href="#">{{post.user}}</a> on {{post.posted | date:medium}}</span>
-                    </div>
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('img/post-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>{{post.title}}</h1>
+                    <span class="meta">Posted by <a href="#">{{post.user}}</a> on {{post.posted | date:medium}}</span>
                 </div>
             </div>
         </div>
-    </header>
+    </div>
+</header>
 
-    <!-- Post Content -->
-    <article>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <p ng-bind-html="post.body"></p>
-                </div>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p ng-bind-html="post.body"></p>
             </div>
         </div>
-    </article>
+    </div>
+</article>
 
 
+<!-- NUEVO COMENTARIO-->
+
+
+</div> <!-- container -->
+
+<div class="row" >
+    <div class="col-md-6 col-md-offset-3">
+        <div class="alert alert-warning" style="font-size: 13px" ng-show="nullComment">
+            <button type="button" class="close" aria-hidden="true">&times;</button>
+            <strong>Error!</strong> You can't leave empty the comment box...
+        </div>
+        <textarea ng-model="comment.body" required name="comentario" id="inputComentario" placeholder="Leave us a comment..." class="form-control" rows="3" required="required"></textarea><br>
+        <center><button type="button" class="btn btn-info" ng-click="submitComment(comment, post._id)">Write a comment!</button></center>
+    </div>
+</div>
+
+<!-- Comentarios publicados -->
+<br>
+<div class="row">
+<div class="col-md-10 col-md-offset-2">
+<div class="row">
+    <div class="col-md-8 " >
+        <h3>Comments in this post: ({{post.comments.length}})</h3>
+    </div><!-- /col-sm-12 -->
+</div><!-- /row -->
+<div class="row" ng-repeat="comment in post.comments">
+    <div class="col-sm-1" >
+        <div class="thumbnail">
+            <img class="img-responsive user-photo" src="http://semantic-ui.com/images/avatar/small/stevie.jpg">
+        </div><!-- /thumbnail -->
+    </div><!-- /col-sm-1 -->
+
+    <div class="col-md-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <strong>{{comment.username}}</strong> <span class="text-muted">{{comment.createdAt|date:medium}}</span>
+            </div>
+            <div class="panel-body">
+                {{comment.body}}
+            </div><!-- /panel-body -->
+        </div><!-- /panel panel-default -->
+    </div><!-- /col-sm-5 -->
+</div><!-- /row -->
+</div>
+</div>

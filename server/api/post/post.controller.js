@@ -8,6 +8,12 @@
  * DELETE  /api/posts/:id          ->  destroy
  */
 
+//COMMENTS
+/**
+  * GET     /api/posts/comments/:id           ->  index of comments in post
+  * POST    /api/posts/comments/             -> post a new comment by post id
+ */
+
 'use strict';
 
 import _ from 'lodash';
@@ -108,3 +114,23 @@ export function destroy(req, res) {
     .then(removeEntity(res))
     .catch(handleError(res));
 }
+
+
+// COMMENTS
+
+export function postNewComment(req, res) {
+   Post.update({_id: req.body.postid}, {$push: {comments: {username: req.body.username, body: req.body.body}}}, function (err, comment) {
+     if(err) console.log('ERROR')
+
+     res.status(200).jsonp(comment); 
+   })
+}
+
+export function getComments(req,res) {
+   Post.findById(req.params.id, function (err, articulo) {
+    if(err) res.status(500).send(err);
+
+    console.log('GET /articulos/' + req.params.id);
+        res.status(200).jsonp(articulo.comments);
+   }); 
+};

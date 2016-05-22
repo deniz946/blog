@@ -13,4 +13,9 @@ router.put('/:id', controller.update);
 router.patch('/:id', controller.update);
 router.delete('/:id', controller.destroy);
 
+//COMMENTS
+
+router.get('/comments/:id', controller.getComments);
+router.post('/comments/', controller.postNewComment);
+
 module.exports = router;

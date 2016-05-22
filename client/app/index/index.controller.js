@@ -6,6 +6,7 @@ class IndexComponent {
   	this.Posts = Posts;
   	this.Posts.getActivePosts().success(function (posts) {
 		$scope.posts = posts;
+    console.log(posts)
   	})
   }
 }

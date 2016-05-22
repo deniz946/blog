@@ -8,6 +8,7 @@ var PostSchema = new mongoose.Schema({
   body: String,
   tags: String,
   user: String,
+  comments: [{username: {type: String}, body: {type: String}, createdAt: {type: Date, default: Date.now}}],
   posted: {type: Date, default: Date.now},
   active: Boolean
 });
