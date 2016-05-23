@@ -16,11 +16,13 @@ class SignupController {
     this.submitted = true;
 
     if (form.$valid) {
+      var img = gravatar(this.user.email, {size: 200, rating: "pg", backup: "retro", secure: true});
       this.Auth.createUser({
         name: this.user.name,
         email: this.user.email,
         password: this.user.password,
-        username: this.user.username
+        username: this.user.username,
+        img: img
       })
       .then(() => {
         // Account created, redirect to home

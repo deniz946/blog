@@ -73,7 +73,7 @@ export function index(req, res) {
     .catch(handleError(res));
 }
 
-// Gets a list of Posts
+// Gets a list of active Posts
 export function indexActive(req, res) {
   return Post.find({active: true}).sort({posted: -1}).exec()
     .then(respondWithResult(res))
@@ -119,7 +119,7 @@ export function destroy(req, res) {
 // COMMENTS
 
 export function postNewComment(req, res) {
-   Post.update({_id: req.body.postid}, {$push: {comments: {username: req.body.username, body: req.body.body}}}, function (err, comment) {
+   Post.update({_id: req.body.postid}, {$push: {comments: {username: req.body.username, body: req.body.body, img: req.body.img}}}, function (err, comment) {
      if(err) console.log('ERROR')
 
      res.status(200).jsonp(comment); 

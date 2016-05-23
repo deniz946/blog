@@ -27,6 +27,8 @@
 
 <!-- NUEVO COMENTARIO-->
 
+<ui-gravatar gravatar-email="email"></ui-gravatar>
+
 
 </div> <!-- container -->
 
@@ -53,7 +55,7 @@
 <div class="row" ng-repeat="comment in post.comments">
     <div class="col-sm-1" >
         <div class="thumbnail">
-            <img class="img-responsive user-photo" src="http://semantic-ui.com/images/avatar/small/stevie.jpg">
+            <img class="img-responsive user-photo" ng-src="{{comment.img}}">
         </div><!-- /thumbnail -->
     </div><!-- /col-sm-1 -->
 
@@ -70,3 +72,4 @@
 </div><!-- /row -->
 </div>
 </div>
+

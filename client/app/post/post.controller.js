@@ -14,10 +14,11 @@
           var newComment = {
             username: Auth.getCurrentUser().name,
             body: comment.body,
+            img: Auth.getCurrentUser().img,
             postid: postid
           };
           console.log(newComment)
-          Posts.postNewComment(newComment)
+          Posts.postNewComment(newComment);
           $window.location.reload();
         }
         else{
@@ -27,7 +28,25 @@
           }, 3000)
         }
       }
-    }}
+
+      $scope.image = gravatar("deniz946@gmail.com", {size: 200, rating: "pg", backup: "retro", secure: true});
+
+
+      $scope.email = "chris@gmail.com";
+      $scope.options = {
+              secure: false,
+              size: 100,
+              defaultImage: 'mm'
+          };
+    }
+
+
+
+
+
+
+
+  }
 
     angular.module('erpApp')
     .component('post', {

@@ -1,12 +1,14 @@
 'use strict';
 
 class SettingsController {
-  constructor(Auth) {
+  constructor(Auth, $scope) {
     this.errors = {};
     this.submitted = false;
-
     this.Auth = Auth;
+    $scope.Auth = Auth
+    console.log(this.Auth.getCurrentUser().name)
   }
+
 
   changePassword(form) {
     this.submitted = true;

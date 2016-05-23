@@ -11,7 +11,7 @@ angular.module('erpApp', [
   'ui.bootstrap',
   'validation.match',
   'datatables',
-  'ui.tinymce'
+  'ui.tinymce',
 ])
   .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider
