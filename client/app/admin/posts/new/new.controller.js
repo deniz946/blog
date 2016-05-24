@@ -14,13 +14,14 @@ angular.module('erpApp')
         name: Auth.getCurrentUser().name,
         username: Auth.getCurrentUser().username,
         email: Auth.getCurrentUser().email,
-        img: Auth.getCurrentUser().img
+        img: Auth.getCurrentUser().img,
+        bio: Auth.getCurrentUser().bio
       };
 
     	Posts.newPost(post).success(function (post) {
     		console.log(post);
     	});
-      
+
     	$state.go('admin.posts');
     }
   });

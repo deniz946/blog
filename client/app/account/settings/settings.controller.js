@@ -20,7 +20,7 @@ class SettingsController {
 
     this.Users.editBio(this.edit).success(function (bio) {
       console.log(bio);
-      $state.go('settings')
+      alert("Bio edited!!")
     })
   };
 
