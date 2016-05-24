@@ -1,13 +1,15 @@
 <form role="form">
-	<legend>Form title</legend>
+	<legend>Add new post</legend>
 
 	<div class="form-group">
 		<label for="">Title</label>
 		<input type="text" class="form-control" ng-model="post.title" placeholder="Input field">
 	</div>
 	<div class="form-group">
-		<label for="">Categories</label>
-		<input type="text" class="form-control" ng-model="post.categories" placeholder="Input field">
+		<label for="">Category</label>
+		<select name="" id="input" class="form-control" required="required" ng-model='post.categories' >
+			<option ng-repeat="cat in categories" selected value="{{cat.name}}">{{cat.name}}</option>
+		</select>
 	</div>
 	<div class="row">
 		<div class="col-md-11">

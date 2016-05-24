@@ -49,7 +49,9 @@
        <li ng-repeat="item in nav.menu" >
         <a ui-sref="{{item.state}}">{{item.title}}</a>
       </li>
+      <li ng-hide="nav.isLoggedIn()" ><a ui-sref="login">Login</a></li>
       <li ng-show="nav.isAdmin()" ><a ui-sref="admin.users">Admin</a></li>
+      <li ng-show="nav.isLoggedIn()" ><a ui-sref="settings">Settings</a></li>
       <li ng-show="nav.isLoggedIn()"><a ui-sref="logout">Logout</a></li>
     </ul>
   </div>

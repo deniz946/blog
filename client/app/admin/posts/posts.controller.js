@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('erpApp')
-.controller('PostsCtrl', function ($scope, DTOptionsBuilder, DTColumnDefBuilder, Posts) {
-	$scope.message = 'Hello';
+.controller('PostsCtrl', function ($scope, DTOptionsBuilder, DTColumnDefBuilder, Posts, Categories) {
+	$scope.addCategory = false;
 
 	var vm = this;
 	vm.dtOptions = DTOptionsBuilder.newOptions()
@@ -16,9 +16,21 @@ angular.module('erpApp')
 	];
 
 	Posts.getPosts().success(function (posts) {
-		 console.log(posts); 
 		 $scope.posts = posts;
 	})
+
+	$scope.categoryPanel = function () {
+		 $scope.addCategory = true; 
+	}
+
+	$scope.submitCategory = function (category) {
+		 console.log(category);
+		 Categories.submitCategory(category).success(function (cat) {
+		 	 console.log(cat);
+		 	 $scope.category = ''; 
+		 }) 
+		 $scope.addCategory = false;
+	}
 
 	
 

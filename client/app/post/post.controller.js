@@ -8,6 +8,7 @@
        console.log(post.comments)
      });
       $scope.nullComment = false;
+      $scope.Auth = Auth;
 
       $scope.submitComment = function (comment, postid) {
         if(typeof comment != 'undefined'){
@@ -34,10 +35,10 @@
 
       $scope.email = "chris@gmail.com";
       $scope.options = {
-              secure: false,
-              size: 100,
-              defaultImage: 'mm'
-          };
+        secure: false,
+        size: 100,
+        defaultImage: 'mm'
+      };
     }
 
 
@@ -48,11 +49,11 @@
 
   }
 
-    angular.module('erpApp')
-    .component('post', {
-      templateUrl: 'app/post/post.html',
-      controller: PostComponent,
-      controllerAs: 'post'
-    });
+  angular.module('erpApp')
+  .component('post', {
+    templateUrl: 'app/post/post.html',
+    controller: PostComponent,
+    controllerAs: 'post'
+  });
 
-  })();
+})();
