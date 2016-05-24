@@ -19,6 +19,6 @@ module.exports = {
           process.env.MONGOHQ_URL ||
           process.env.OPENSHIFT_MONGODB_DB_URL +
           process.env.OPENSHIFT_APP_NAME ||
-          'mongodb://localhost/erp'
+          'mongodb://deniz946:torrevieja123@ds011903.mlab.com:11903/fridox_1'
   }
 };
