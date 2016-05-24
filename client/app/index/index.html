@@ -30,12 +30,12 @@
                         <h3 class="post-subtitle no-negrita">
                             <p ng-bind-html ='(post.body)'></p>
                         </h3>
-                    
-                    <p class="post-meta">Posted by <a href="#">{{post.user}}</a> on {{post.posted | date:medium}}</p>
+
+                    <p class="post-meta">Posted by <a href="#">{{post.user.name}}</a> on {{post.posted | date:medium}}</p>
                     <hr>
                 </div>
-                
-               
+
+
                 <hr>
                 <!-- Pager -->
                 <ul class="pager">

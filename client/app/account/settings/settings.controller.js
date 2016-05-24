@@ -1,13 +1,28 @@
 'use strict';
 
 class SettingsController {
-  constructor(Auth, $scope) {
+  constructor(Auth, $scope, Users, $state) {
     this.errors = {};
     this.submitted = false;
     this.Auth = Auth;
-    $scope.Auth = Auth
-    console.log(this.Auth.getCurrentUser().name)
+    this.Users = Users;
+    this.scope = $scope;
+    this.scope.Auth = Auth;
+    this.state = $state;
+
   }
+
+  editBio(bio){
+    this.edit = {
+      id: this.Auth.getCurrentUser()._id,
+      bio: this.bio
+    };
+
+    this.Users.editBio(this.edit).success(function (bio) {
+      console.log(bio);
+      $state.go('settings')
+    })
+  };
 
 
   changePassword(form) {

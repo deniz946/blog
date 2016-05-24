@@ -17,22 +17,22 @@ angular.module('erpApp')
 
 	Posts.getPosts().success(function (posts) {
 		 $scope.posts = posts;
-	})
+	});
 
 	$scope.categoryPanel = function () {
-		 $scope.addCategory = true; 
-	}
+		 $scope.addCategory = true;
+	};
 
 	$scope.submitCategory = function (category) {
 		 console.log(category);
 		 Categories.submitCategory(category).success(function (cat) {
 		 	 console.log(cat);
-		 	 $scope.category = ''; 
-		 }) 
+		 	 $scope.category = '';
+		 });
 		 $scope.addCategory = false;
 	}
 
-	
+
 
 
 });

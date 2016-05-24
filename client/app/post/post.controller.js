@@ -4,7 +4,7 @@
   class PostComponent {
     constructor($scope, Posts, $stateParams, Auth, $window, $timeout) {
       Posts.getById($stateParams.id).success(function (post) {
-       $scope.post = post
+       $scope.post = post;
        console.log(post.comments)
      });
       $scope.nullComment = false;

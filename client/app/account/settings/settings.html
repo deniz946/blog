@@ -2,8 +2,21 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
+      <img ng-src={{Auth.getCurrentUser().img}} alt="" uib-tooltip="{{Auth.getCurrentUser().username}}" >
+      <br>
+      {{Auth.getCurrentUser().name}}<br>
+      {{Auth.getCurrentUser().bio}}
+      <h1>User info</h1>
+      <div class="row">
+        <div class="col-md-8">
+          <div class="form-group">
+            <label for="comment">Bio:</label>
+            <textarea class="form-control" rows="4" ng-model="vm.bio"></textarea><br>
+            <button class="btn btn-primary" ng-click="vm.editBio(bio)">Edit bio</button>
+          </div>
+        </div>
+      </div>
       <h1>Change Password</h1>
-      <img ng-src={{Auth.getCurrentUser().img}} alt="">
     </div>
     <div class="col-sm-12">
       <form class="form" name="form" ng-submit="vm.changePassword(form)" novalidate>

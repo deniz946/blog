@@ -99,6 +99,19 @@ export function changePassword(req, res, next) {
     });
 }
 
+/*
+* Edit bio
+* */
+
+//noinspection JSAnnotator
+export function editBio(req, res, next) {
+  User.update({_id: req.body.id}, {$push: {bio: req.body.bio}}).then(function (updated, err) {
+    if(err) console.log(err);
+
+    res.status(200).jsonp(updated);
+  })
+};
+
 /**
  * Get my info
  */
