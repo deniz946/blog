@@ -11,11 +11,7 @@ angular.module('erpApp')
     $scope.submitPost = function (post) {
       console.log(post.categories);
     	post.user = {
-        name: Auth.getCurrentUser().name,
-        username: Auth.getCurrentUser().username,
-        email: Auth.getCurrentUser().email,
-        img: Auth.getCurrentUser().img,
-        bio: Auth.getCurrentUser().bio
+        id: Auth.getCurrentUser()._id
       };
 
     	Posts.newPost(post).success(function (post) {

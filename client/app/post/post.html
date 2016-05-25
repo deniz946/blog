@@ -28,7 +28,7 @@
       <div class="panel-body">
         <div class="row">
           <div class="col-xs-6 col-xs-offset-3 col-sm-3 col-sm-offset-0">
-            <img class="img-responsive img-circle center-block" ng-src="{{post.user.img}}">
+            <img class="img-responsive img-circle center-block" ng-src="{{userInfo.img}}">
           </div><!-- col-sm-3 -->
 
           <div class="col-xs-12 col-sm-9">
@@ -36,10 +36,10 @@
             <div class="author-box-intro small text-muted">About the Author</div>
             <!-- .author-box-intro --><div class="author-inline-block">
             <h4 class="author-box-title">
-              <span class="author-name text-primary">{{post.user.name}}</span><small class="author-social-links small"><a href="#" class="author-social-link twitter small" target="_blank"><i class="fa fa-2x fa-twitter"></i></a><a href="#" class="author-social-link gplus small" target="_blank"><i class="fa fa-2x fa-google-plus"></i></a>   </small><!-- author-social-links -->
+              <span class="author-name text-primary">{{userInfo.name}}</span><small class="author-social-links small"><a href="#" class="author-social-link twitter small" target="_blank"><i class="fa fa-2x fa-twitter"></i></a><a href="#" class="author-social-link gplus small" target="_blank"><i class="fa fa-2x fa-google-plus"></i></a>   </small><!-- author-social-links -->
             </h4>
           </div>
-            <div class="author-box-content">{{post.user.bio}}
+            <div class="author-box-content">{{userInfo.bio}}
             </div><!-- author-box-content -->
           </div><!-- col -->
         </div><!-- row -->

@@ -2,11 +2,16 @@
 (function(){
 
   class PostComponent {
-    constructor($scope, Posts, $stateParams, Auth, $window, $timeout) {
+    constructor($scope, Posts, $stateParams, Auth, $window, $timeout, Users) {
       Posts.getById($stateParams.id).success(function (post) {
        $scope.post = post;
-       console.log(post.comments)
+        Users.getUserById(post.user.id).success(function (user) {
+          $scope.userInfo = user;
+        });
      });
+
+
+
       $scope.nullComment = false;
       $scope.Auth = Auth;
 
@@ -30,10 +35,6 @@
         }
       }
 
-      $scope.image = gravatar("deniz946@gmail.com", {size: 200, rating: "pg", backup: "retro", secure: true});
-
-
-      $scope.email = "chris@gmail.com";
       $scope.options = {
         secure: false,
         size: 100,

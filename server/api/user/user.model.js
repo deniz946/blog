@@ -53,7 +53,11 @@ UserSchema
   .get(function() {
     return {
       'name': this.name,
-      'role': this.role
+      'role': this.role,
+      'username': this.username,
+      'email': this.email,
+      'img': this.img,
+      'bio': this.bio
     };
   });
 

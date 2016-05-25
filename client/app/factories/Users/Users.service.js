@@ -6,13 +6,14 @@ angular.module('erpApp')
     var urlBase = 'http://localhost:9000/api';
 
     factory.getUserById = function (id) {
-      return $http.get(urlBase + '/user')
+      return $http.get(urlBase + '/users/' + id);
     };
 
     factory.editBio = function (edit) {
       console.log(edit);
       return $http.put(urlBase + '/users/bio', edit);
     };
+
 
     return factory;
   });
